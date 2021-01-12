@@ -1,0 +1,109 @@
+@charset 'utf-8';
+@import "_variable";
+@import "_mixin";
+@import "_animation";
+
+* {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  width: 100%;
+}
+
+body {
+  width: 400px;
+  font-size: 1.4rem;
+  background-color: $bodyBkColor;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+}
+
+.App {
+  width: 100%;
+  height: auto;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-width: 280px;
+  min-height: 100vh;
+  // padding-bottom: 30px;
+  overflow: hidden;
+
+  &::before {
+    position: absolute;
+    bottom: -100px;
+    left: -200px;
+    content: "";
+    background-color: #27479e0a;
+    width: 200%;
+    height: 50%;
+    transform: rotate(5deg);
+  }
+}
+
+.contents {
+  position: relative;
+  width: 95%;
+  max-width: 600px;
+  min-width: 290px;
+  height: auto;
+  min-height: 80vh;
+  margin: 15px auto 10px;
+  padding: 40px 20px;
+  background: $bodyBkColor;
+  border-radius: 10px;
+  box-shadow: 0px 8px 10px -2px #ffffff1a, 0px 0px 6px 1px #4646462b;
+  color: white;
+
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-align: left;
+    color: #b9dff5;
+  }
+}
+
+.sectionTitle {
+  font-size: 1.9rem;
+  font-weight: 400;
+}
+
+.headLeft {
+  font-size: 1.6rem;
+  padding: 0 10px;
+  text-align: left;
+  color: $headColor;
+}
+
+.textLeft {
+  font-size: 1.4rem;
+  padding: 0 10px;
+  text-align: left;
+  color: $textColor;
+}
+
+@import "_common";
+@import "_percent";
+@import "_dissolves";
+@import "_search";

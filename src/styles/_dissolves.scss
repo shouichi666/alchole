@@ -1,0 +1,468 @@
+/********************* 
+dissolves section style 
+********************/
+
+/********************* FirstPage ********************/
+.FirstPage {
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-align: left;
+    padding: 0 0 0 20px;
+  }
+
+  &__textBox {
+    width: 90%;
+    margin: 20px auto;
+    padding: 10px 20px;
+    border: $lineColor 1px solid;
+    border-radius: 30px;
+
+    &--nomalText {
+      font-size: 1.3rem;
+      text-align: left;
+      line-height: 1.6em;
+      color: white;
+    }
+
+    &--changeText {
+      margin: 10px 0 0 0;
+      font-size: 1rem;
+      color: lighten($mainColor, 50%);
+    }
+  }
+
+  &__clacText {
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px 10px;
+    border-radius: 5px;
+    background-color: rgba(169, 169, 169, 0.459);
+    font-size: 1rem;
+
+    p:nth-child(1) {
+      padding: 0 0 10px 10px;
+      text-align: left;
+    }
+
+    p:nth-child(2) {
+      padding: 0 0 0 20px;
+      text-align: left;
+    }
+  }
+} //FirstPage
+
+/********************* SecondPage ********************/
+.SecondPage {
+  padding: 30px 30px 90px 30px;
+  color: white;
+
+  &__flexBox {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 10px 0 30px;
+  }
+
+  &__button {
+    border-radius: 50%;
+    margin: 10px 0 0 0;
+    width: 170px;
+    height: 170px;
+    padding: 20px 0;
+    color: #a2a2cc;
+    border: $lineColor solid 0.7px;
+    background: rgba(255, 255, 255, 0.034);
+    // background: radial-gradient(
+    //   circle,
+    //   rgba(255, 255, 255, 1) 62%,
+    //   rgba(176, 176, 255, 1) 100%
+    // );
+    font-size: 2.5rem;
+  }
+} //SecondPage
+
+/********************* TypePage ********************/
+.TypePage {
+  padding: 14px 0;
+
+  &__text {
+    font-size: 1.3rem;
+    margin: 0 0 15px;
+  }
+}
+
+.flexWrap {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  &__box {
+    position: relative;
+    width: calc((100% / 3) - 5px);
+    border-radius: 2px;
+    height: 80px;
+    margin: 0.7px;
+    box-shadow: 0px 5px 10px -2px #9494941a, 0px 0px 20px 1px #c0c0c009;
+    background-color: #0808ff34;
+    border: #ffffff73 solid 0.6px;
+    color: rgb(240, 240, 240);
+
+    &:last-child {
+      width: 97%;
+    }
+
+    &--name {
+      position: absolute;
+      width: 100%;
+      top: 18px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.3rem;
+    }
+
+    &--ml {
+      position: absolute;
+      bottom: 8px;
+      left: 10px;
+      // transform: translate(-50%, -50%);
+      font-size: 1.4rem;
+    }
+
+    &--percent {
+      position: absolute;
+      bottom: 8px;
+      right: 9px;
+      // transform: translateX(-50%);
+      font-size: 1rem;
+    } //--percent
+  } //__box
+} //end flexWrap
+
+/********************* Radio ********************/
+.Radio {
+  width: 50%;
+
+  &__label {
+    display: inline-block;
+    border-radius: 20%;
+    border: $lineColor solid 1px;
+    width: 110px;
+    height: 80px;
+    line-height: 80px;
+    transition: $changeTime;
+  }
+
+  &__input {
+    display: none;
+    &:checked + .Radio__label {
+      transition: $changeTime;
+      background-color: $radioColor;
+      box-shadow: 1px 1px 5px $radioColor;
+      color: rgb(255, 255, 255);
+    }
+  }
+} //Radio
+
+/********************* WeightSelect ********************/
+.WeightSelect {
+  position: fixed;
+  bottom: 0;
+  left: -100%;
+}
+
+.WeightSelect_isOpen {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #4f46ca96;
+  transition: $changeTime;
+
+  input[type="radio"] {
+    display: none;
+  }
+  input:checked + label {
+    background-color: darkviolet;
+    color: white;
+  }
+
+  &__heading {
+    font-size: 2rem;
+    color: $lineColor;
+    margin: 0 0 10px 0;
+  }
+
+  &__wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 5px 5px -2px #0a0a0a1a, 0px 0px 3px 1px #0a0a0a70;
+  }
+
+  &__list {
+    margin: 0 auto;
+    width: 100%;
+    height: 60vh;
+    overflow-y: scroll;
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-radius: 0px;
+    background: #f1f1f1;
+    box-shadow: inset 5px 5px 1px #e7e7e7, inset -5px -5px 1px #fbfbfb;
+
+    &--item {
+      width: 70px;
+      height: 70px;
+      margin: 5px;
+      border-radius: 8px;
+      border: darkviolet solid 1px;
+      background-color: white;
+      box-shadow: 0px 5px 5px -2px #0a0a0a1a, 0px 0px 3px 1px #0a0a0a2b;
+    }
+  }
+
+  &__label {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    line-height: 70px;
+  }
+}
+
+/********************* InputModal ********************/
+.InputModal {
+  position: fixed;
+  z-index: -1;
+  bottom: 0;
+  left: 200%;
+  width: 100%;
+  opacity: 0.3;
+  transition: $changeTime;
+}
+
+.InputModal_isOpen {
+  position: fixed;
+  opacity: 10;
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  // background-color: rgba(0, 0, 0, 0.274);
+  background-color: #4f46ca96;
+  transition: $changeTime;
+
+  &__container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 300px;
+    height: 70%;
+    max-height: 400px;
+    background-color: #ffffffc5;
+    @include boxStyle;
+    box-shadow: 0px 5px 5px -2px #0a0a0a1a, 0px 0px 3px 1px #0a0a0a2b;
+    transition: $changeTime;
+    color: rgb(12, 4, 4);
+
+    p:nth-child(1) {
+      margin: 2em 0 0 0;
+    }
+  }
+}
+
+/********************* AmountSelect ********************/
+.AmountSelect {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  // background-color: darkgoldenrod;
+
+  select {
+    width: 100%;
+    padding: 10px 0 0 50px;
+    height: 100px;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: rgb(45, 5, 65);
+    text-align: center;
+    border-radius: 7px;
+    background: #ffffff;
+    box-shadow: inset 7px 7px 15px #e8e8e8, inset -7px -7px 15px #ffffff;
+  }
+
+  option {
+    border-radius: 20px;
+  }
+
+  option:nth-child(2n + 1) {
+    background-color: #ebebeb;
+  }
+}
+
+/********************* LastPage ********************/
+.LastPage {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1000px;
+  height: 80vh;
+  margin: 5px auto 0;
+  background-color: $bodyBkColor;
+  color: rgb(185, 185, 185);
+
+  &__top {
+    position: relative;
+    width: 100%;
+    height: 50%;
+    border: $lineColor solid 0.5px;
+    // background-color: aqua;
+  }
+
+  &__left {
+    position: relative;
+    width: 50%;
+    height: 20%;
+    border: $lineColor solid 0.5px;
+    border-top: none;
+    border-bottom: none;
+    // background-color: rgb(56, 97, 97);
+  }
+
+  &__right {
+    position: relative;
+    width: 50%;
+    height: 20%;
+    border: $lineColor solid 0.5px;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    // background-color: rgb(132, 0, 255);
+  }
+
+  &__bottom {
+    position: relative;
+    width: 100%;
+    height: 35%;
+    border: #fff41c solid 0.5px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+  }
+
+  &__heading {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-align: left;
+    font-weight: 300;
+    font-size: 1.4rem;
+  }
+
+  &__time {
+    margin: 79px 0 0;
+    font-size: 4.5rem;
+    font-weight: 600;
+    color: rgb(198, 223, 255);
+  }
+
+  &__afterTime {
+    margin: 10px 0 0;
+    font-size: 2rem;
+    color: #868686;
+  }
+
+  &__amount {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__judgment {
+    margin: 45px 0 0 0;
+    font-size: 2rem;
+    color: #fff41c;
+  }
+
+  &__border {
+    position: absolute;
+    bottom: 90px;
+    left: 0;
+    background-color: #c1d64a;
+    height: 10px;
+    width: 100px;
+  }
+}
+/********************* bloodTable ********************/
+
+.bloodTable {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 70px;
+  display: flex;
+  background-color: #ff9494c5;
+
+  &__item {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    font-size: 0.8rem;
+    color: rgb(255, 255, 255);
+
+    &--num {
+      // color: rgb(24, 1, 1);
+      font-size: 0.9rem;
+      position: absolute;
+      top: -15px;
+      left: 0;
+    }
+
+    &:nth-child(1) {
+      width: 12%;
+      background-color: #a3c3ffc5;
+    }
+    &:nth-child(2) {
+      width: 13%;
+      background-color: #3d61ffc5;
+    }
+    &:nth-child(3) {
+      width: 20%;
+      background-color: #3d5485;
+    }
+    &:nth-child(4) {
+      width: 30%;
+      background-color: #91c72dc5;
+    }
+    &:nth-child(5) {
+      width: 25%;
+      background-color: #0481a7c5;
+    }
+    &:nth-child(6) {
+      width: 18%;
+      background-color: #ff0000c5;
+    }
+  }
+}

@@ -1,0 +1,62 @@
+------------------
+-- 分解入力項目 --
+------------------
+1:weight
+2:percent or alc-type
+3:sex
+4:amount of drink
+
+
+--------------
+-- 入力順番 --
+--------------
+1:sex and weight -> [select box]
+2:percent or alc-type and amount of drink -> [acordion]
+
+
+----------
+-- 機能 --
+----------
+任意の項目を選択、入力してもらい
+アルコールの分解時間を計算する
+計算終了後、現在の時間から何時間後に
+分解が完了するかカウントダウンが始まる
+
+
+------------
+-- 計算式 --
+------------
+$disassemblyTime(g/h) = amount * percent * 0.8 / weight(kg) * 0.1
+
+
+
+---------------
+---  serch  ---
+---------------
+*英語入力のみ
+
+!!!!!!!!!!!!!      
+!!  $base  !!
+!!  $tate  !!
+!!  $time  !!
+!!!!!!!!!!!!!
+
+
+!!!!!!!!!!!!!
+!!  $base  !! 
+!!!!!!!!!!!!!
+ => "gin","vodka","rum","whiskey","Light Rum","Bourbon Whiskey","Irish Whiskey","Rye Whiskey","Grand Marnier","Scotch Whisky","Canadian Whisky","Champagne","Old Tom Gin","Cognac","Brandy","Benedictine","Dry Vermouth","Kümmel","Tequila","Campari",
+
+
+
+!!!!!!!!!!!!!!
+!!  $taste  !! 
+!!!!!!!!!!!!!!
+=>"Fresh","Sour","Boozy","Bitter sweet","Sweet",
+
+
+
+1!!!!!!!!!!!!!
+!!  $time   !! 
+!!!!!!!!!!!!!!
+=> "After dinner","Longdrink","All day","Pre-dinner",

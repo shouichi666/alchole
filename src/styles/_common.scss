@@ -1,0 +1,388 @@
+/*
+  conponent style
+*/
+
+/********************* Headre ********************/
+.Header {
+  position: relative;
+  background-color: $bodyBkColor;
+  width: 100%;
+  height: 65px;
+  border-bottom: #46464617 solid 1px;
+  box-shadow: 0px 8px 16px -2px rgba(87, 87, 87, 0.507),
+    0px 2px 50px 5px rgba(31, 31, 31, 0.288);
+  overflow: hidden;
+
+  &:before {
+    position: absolute;
+    top: -90px;
+    left: -90px;
+    z-index: 1;
+    content: "";
+    height: 168px;
+    width: 168px;
+    transform: rotate(10deg);
+    // border-radius: 50%;
+    background-color: #353333e3;
+    box-shadow: 1px 2px 5px 0px #0000006e, 0px 0px 6px 2px #0a0a0a00;
+  }
+
+  .logo {
+    // position: relative;
+    // z-index: 1;
+    padding: 5px;
+
+    &__img {
+      width: 50px;
+    }
+  } //end logo
+}
+
+/********************* Fooeter *********************/
+.Footer {
+  background-color: $footerColor;
+}
+
+/********************* Hamberger ********************/
+.Hamberger {
+  position: absolute;
+  top: 22px;
+  left: 20px;
+  z-index: 10;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+  transition: $changeTime;
+
+  &__wrap {
+    position: relative;
+    width: 25px;
+    height: 20px;
+  }
+
+  &__line {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+    width: 30px;
+    height: 2.5px;
+    background-color: black;
+    border-radius: 10px;
+    box-shadow: -0.5px -0.5px 1px #04003d, 1px 1px #dae4ff;
+    &:nth-child(2) {
+      top: 50%;
+    }
+
+    &:nth-child(3) {
+      top: 100%;
+    }
+  }
+} // end Hamberger
+
+.HambergerIsOpen {
+  position: absolute;
+  top: 22px;
+  left: 25px;
+  z-index: 200;
+  width: 30px;
+  height: 23px;
+  cursor: pointer;
+  transform: rotate(360deg);
+  transition: $changeTime;
+
+  &__wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__line {
+    position: absolute;
+    z-index: 200;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+    width: 30px;
+    height: 2.5px;
+    background-color: rgb(228, 227, 227);
+    border-radius: 10px;
+    box-shadow: -0.1px -0.1px 1px #ffffff, 0.1px 0.1px #dae4ff;
+
+    &:nth-child(1) {
+      top: 22%;
+      left: -1px;
+      width: 15px;
+      transform: rotate(-43deg);
+    }
+
+    &:nth-child(2) {
+      top: 50%;
+    }
+
+    &:nth-child(3) {
+      top: 68%;
+      left: -1px;
+      width: 15px;
+      transform: rotate(43deg);
+    }
+  }
+} // end HambergerIsOpen
+
+/********************* Nav ********************/
+.Nav {
+  opacity: 0;
+  transition: $changeTime;
+  transform: translateY(-500px);
+} //end Nav
+
+.NavIsOpen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  opacity: 1;
+  transform: translateY(0px);
+  transition: $changeTime;
+  display: block;
+  background-color: #141f24da;
+  width: 100vw;
+  height: 100vh;
+
+  &__box {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 300px;
+    height: 400px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #1b1b1be3;
+    border-radius: 20px;
+    box-shadow: 0px 1px 3px #cfc5f088;
+  }
+
+  a {
+    position: relative;
+    display: inline-block;
+    width: 80%;
+    margin: 0 auto 25px;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: #cec1f8;
+    border-bottom: 0.1px solid #02175a;
+    box-shadow: 0px 1px 0px #c6b4ff93;
+    text-shadow: -0.5px -0.9px 1px #04003d, 0.6px 0.6px #dae4ff;
+  }
+}
+
+/********************* Top ********************/
+.topPage {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: $bodyBkColor;
+  background: linear-gradient(167deg, $bodyBkColor, $bodyBkColor 75%);
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px;
+  }
+
+  &__linkContents {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 500px;
+    min-width: 200px;
+  }
+
+  &__linkButton {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #2a1c6b7a;
+    border-radius: 4px;
+    box-shadow: 0px 0px 7px 5px #cacaca1a;
+    background-color: #000000;
+    color: rgb(224, 224, 224);
+    font-size: 1.6rem;
+    font-weight: 300;
+
+    &:not(:last-child) {
+      margin-bottom: 14px;
+    }
+  }
+} //end topPage
+
+/********************* InputParts ********************/
+.InputParts {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  min-width: 200px;
+  margin: 0 auto;
+
+  input[type="text"] {
+    background-color: transparent;
+  }
+
+  &__label {
+    position: absolute;
+    z-index: 10;
+    top: 25px;
+    left: 19px;
+    padding: 0 5px;
+    transform: translateY(-50%);
+    transition: $changeTime;
+    opacity: 1;
+    color: $lineColor;
+    font-size: 1.3rem;
+  } //end label
+
+  &__unit {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    transition: 0.8s;
+    color: $inputFontColor;
+    font-size: 1.5rem;
+  } //end unit
+
+  &__input {
+    background-color: transparent;
+    position: relative;
+    width: 90%;
+    min-width: 200px;
+    height: 30px;
+    margin: 10px 0 15px;
+    padding: 25px;
+    color: darken($inputFontColor, 10%);
+    font-size: 1.7rem;
+    transition: $changeTime;
+    border: none;
+    // border: 1px solid rgba($lineColor, 0.2);
+
+    &:focus {
+      background-color: transparent;
+      border-bottom: 1.3px solid $lineColor;
+      transition: $changeTime;
+      box-shadow: 0px 0px 5px #3ba0da50;
+
+      &::placeholder {
+        transition: $changeTime;
+        opacity: 0.5;
+      }
+    } //end focus
+
+    &::placeholder {
+      color: $inputFontColor;
+      text-align: left;
+      font-size: 1.3rem;
+    }
+
+    &:placeholder-shown {
+      background-color: #3ba0da0a;
+      border: none;
+
+      & + .InputParts__label {
+        z-index: -1;
+        opacity: 0;
+        top: 40%;
+        left: 10px;
+        transform: translateY(-50%);
+      }
+    } //end placeholder-shown
+
+    &:-webkit-autofill {
+      background-color: transparent;
+      box-shadow: 0 0 0px 1000px white inset;
+    }
+  } //end input
+} //end InputParts
+
+/********************* Button ********************/
+.nomalButton {
+  display: inline;
+  width: 230px;
+  min-width: 50px;
+  height: 60px;
+  margin: 30px 0 0 0;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: $changeTime;
+  background: $nomalButtonColor;
+  box-shadow: 1px 2px 5px 0px #5280926e, 0px 0px 6px 2px #ac76df00;
+  color: white;
+
+  &:active {
+    box-shadow: 1px 1px 10px #3ba0da;
+  }
+} //end Button
+
+.listOpenButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: inline;
+  width: 60px;
+  min-width: 50px;
+  height: 60px;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  transform: $changeTime;
+  background-color: $sampleButtonColor;
+  color: white;
+  font-size: 1rem;
+} //end Button
+
+.closeButton {
+  position: absolute;
+  bottom: 20px;
+  display: inline;
+  width: 230px;
+  min-width: 50px;
+  height: 60px;
+  margin: 50px 0 0 0;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: $changeTime;
+  background-color: $closeButtonColor;
+  color: white;
+} //end Button
+
+.fixedButton {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/********************* ResetButton ********************/
+.ResetButton {
+  display: inline;
+  width: 230px;
+  min-width: 50px;
+  height: 60px;
+  margin: 10px 0 0 0;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: $changeTime;
+  background-color: $resetButtonColor;
+  color: white;
+}

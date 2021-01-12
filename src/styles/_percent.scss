@@ -1,0 +1,301 @@
+/********************* 
+percent section style 
+********************/
+
+/********************* FirstInputArea,InputArea,ResultArea ********************/
+
+.FirstInputArea {
+  &__head {
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: left;
+    margin: 20px 0 50px 20px;
+  }
+
+  &__text {
+    font-size: 1.2rem;
+    text-align: left;
+    margin: 0 0 0 20px;
+  }
+} //end FirstInputArea
+
+.InputArea {
+  &__text {
+    padding-left: 20px;
+    margin: 0 0 20px;
+    text-align: left;
+    color: #b9dff5;
+  }
+
+  &__subText {
+    padding-left: 20px;
+    font-size: 10px;
+    color: red;
+    text-align: left;
+  }
+} //end InputArea
+
+.ResultArea {
+  background-color: transparent;
+  box-shadow: none;
+
+  &__resultBox {
+    overflow: hidden;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px 1px #fafafa1a;
+    text-align: left;
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  } //end __resultBox
+
+  &__headBox {
+    padding: 8px 10px;
+    border-bottom: #bbbbbb solid 1px;
+
+    &--heading {
+      text-align: left;
+      font-size: 14px;
+      font-weight: 400;
+      color: rgba(166, 200, 252, 0.425);
+    }
+  } //__headBox
+
+  &__body {
+    padding: 10px 13px 15px;
+
+    &--numberText {
+      text-align: left;
+    }
+
+    &--percent {
+      position: relative;
+      font-size: 2rem;
+      margin: 19px 0;
+      padding: 10px 0;
+      border-bottom: $lineResultColor solid 1px;
+
+      .unit {
+        position: absolute;
+        bottom: -4px;
+        right: 30px;
+        font-size: 1.6rem;
+      }
+    }
+
+    &--highlow {
+      position: relative;
+      padding: 10px 0;
+      text-align: left;
+      border-bottom: $lineResultColor solid 1px;
+
+      .judgment {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 1.6rem;
+      }
+    } //end --highlow
+  } //end__body
+} //end ResultArea
+
+/********************* SampleList ********************/
+.SampleListIsOpen {
+  position: fixed;
+  top: 30%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  transition: 0.5s;
+  opacity: 1;
+  z-index: 10;
+  width: 250px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  box-shadow: 0px 8px 16px -2px #0a0a0a1a, 0px 0px 6px 1px #0a0a0a2b;
+
+  &__head {
+    width: 100%;
+    height: 30px;
+    border-radius: 10px 10px 0 0;
+    background-color: $sampleButtonColor;
+
+    &--item {
+      width: max-content;
+      text-align: center;
+      line-height: 30px;
+      color: white;
+      font-weight: 600;
+    }
+  } //end head
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+
+    &:nth-child(2n + 1) {
+      background-color: #f3fbff;
+    }
+
+    &--left {
+      width: 50%;
+      text-align: left;
+    }
+
+    &--right {
+      width: 50%;
+    }
+  } //end item
+} //end exmpleList
+
+.SampleList {
+  position: absolute;
+  top: 40%;
+  left: -100%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  opacity: 1;
+  transition: 0.5s;
+  z-index: -1;
+  &__head {
+    width: 100%;
+    height: 30px;
+    border-radius: 10px 10px 0 0;
+    background-color: $sampleButtonColor;
+
+    &--item {
+      width: max-content;
+      text-align: center;
+      line-height: 30px;
+      color: white;
+      font-weight: 600;
+    }
+  } //end head
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+
+    &:nth-child(2n + 1) {
+      background-color: #f3fbff;
+    }
+
+    &--left {
+      width: 50%;
+      text-align: left;
+    }
+
+    &--right {
+      width: 50%;
+    }
+  } //end item
+} //end exmpleList.open
+
+/********************* Modal ********************/
+.Modal {
+  display: none;
+
+  &-wrap {
+    position: fixed;
+    z-index: 50;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(24, 5, 24, 0.404);
+  }
+
+  &-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 290px;
+    height: 200px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0px 8px 16px -2px #0a0a0a25, 0px 0px 6px 1px #0a0a0a3f;
+  }
+
+  &-button {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: $modalButtonColor;
+    color: white;
+    font-weight: 600;
+  }
+} //end Modal
+
+.Modal.open {
+  display: block;
+  background-color: rgba(24, 5, 24, 0.404);
+}
+
+/********************* ResultTable ********************/
+.ResultTable {
+  width: 100%;
+  margin-bottom: 20px;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 5px;
+  padding: 5px;
+  box-shadow: 1px 1px 3px 1px #fafafa1a;
+
+  &__thead {
+    tr {
+      padding: 20px 0;
+    }
+
+    th {
+      position: relative;
+      width: calc(100% / 3);
+      height: 50px;
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: white;
+    }
+  } //end __thead
+
+  &__tbody {
+    tr {
+      padding: 20px 0;
+    }
+
+    td {
+      position: relative;
+      height: 50px;
+      padding: 8px;
+      font-size: 1.3rem;
+      font-weight: 300;
+      border-bottom: 0.1px solid rgba(236, 236, 236, 0.555);
+
+      &:nth-child(1) {
+        text-align: left;
+      }
+
+      &:nth-child(2),
+      &:nth-child(3) {
+        padding: 0 10px;
+        text-align: right;
+      }
+    }
+  } //end __tbody
+} //end ResultTable
